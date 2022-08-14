@@ -1,5 +1,5 @@
 # Vote_toggler
-### 융프2 기말고사 문제 활용 - [java GUI]버튼 토글 통한 찬반 표시<br><br>
+### 융프2 기말고사 문제 복습 - [java GUI]버튼 토글 통한 찬반 표시<br><br>
 
 제출된 문제<br>
 ![exaple](https://user-images.githubusercontent.com/101785754/182033339-461201dd-a299-4987-a007-e51a2f83467b.png)
