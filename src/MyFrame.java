@@ -22,7 +22,7 @@ public class MyFrame extends JFrame {
 	private JLabel name = new JLabel();
 	private JLabel num = new JLabel();
 	private JLabel ber = new JLabel();
-	public Color color = new Color(0, 0, 255); // 파랑
+	public Color color = new Color(0, 0, 255);
 	
 	// 메인 프레임 설정
 	MyFrame() {
@@ -102,7 +102,7 @@ public class MyFrame extends JFrame {
 
 				@Override
 				public void mousePressed(MouseEvent e) {
-					// 마우스 눌렀을 때 누른 자리의 좌표를 현재 색깔(찬/반)에 따라 다른 행에 저장
+					// 마우스 눌렀을 때 누른 자리의 좌표를 현재 색깔(찬반)에 따라 다른 행에 저장
 					super.mousePressed(e);
 					if(color.equals(Color.BLUE)) {
 						xy[pros++][0] = e.getPoint();
