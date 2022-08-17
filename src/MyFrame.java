@@ -19,10 +19,10 @@ public class MyFrame extends JFrame {
 	// 각 요소들
 	private JButton proscons = new JButton("Action");
 	private JLabel tag = new JLabel();
-	private JLabel name = new JLabel();
+	//private JLabel name = new JLabel();
 	private JLabel num = new JLabel();
-	private JLabel ber = new JLabel();
-	public Color color = new Color(0, 0, 255);
+	//private JLabel ber = new JLabel();
+	public Color color = new Color(0, 0, 255); // 파랑
 	
 	// 메인 프레임 설정
 	MyFrame() {
@@ -65,7 +65,7 @@ public class MyFrame extends JFrame {
 		WestPanel() {
 			setBackground(Color.YELLOW);
 			setSize(100,400);
-			this.setLayout(new GridLayout(15, 1));
+			this.setLayout(new GridLayout(10, 1));
 			
 			// 액션 리스너 추가한 버튼을 패널에 올리기
 			add(proscons);
@@ -76,14 +76,16 @@ public class MyFrame extends JFrame {
 			JLabel empty = new JLabel();
 			add(empty);
 			empty.setText(" "); // 어떻게 공간을 띄울까 하다 그냥 빈 라벨 넣음
+			tag.setText("<html>이름:<br>홍길동</html>");
+			num.setText("<html>학번:<br>11111111</html>");
 			add(tag);
-			tag.setText("이름:");
-			add(name);
-			name.setText("name");
+			//tag.setText("이름:");
+			//add(name);
+			//name.setText("name");
 			add(num);
-			num.setText("학번:");
-			add(ber);
-			ber.setText("studentnum");
+			//num.setText("학번:");
+			//add(ber);
+			//ber.setText("studentnum");
 		}
 	}
 	
@@ -102,7 +104,7 @@ public class MyFrame extends JFrame {
 
 				@Override
 				public void mousePressed(MouseEvent e) {
-					// 마우스 눌렀을 때 누른 자리의 좌표를 현재 색깔(찬반)에 따라 다른 행에 저장
+					// 마우스 눌렀을 때 누른 자리의 좌표를 현재 색깔(찬/반)에 따라 다른 행에 저장
 					super.mousePressed(e);
 					if(color.equals(Color.BLUE)) {
 						xy[pros++][0] = e.getPoint();
