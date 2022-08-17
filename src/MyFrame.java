@@ -20,7 +20,7 @@ public class MyFrame extends JFrame {
 	private JButton proscons = new JButton("Action");
 	private JLabel tag = new JLabel();
 	private JLabel num = new JLabel();
-	public Color color = new Color(0, 0, 255); // 파랑
+	public Color color = new Color(0, 0, 255); // blue
 	
 	// 메인 프레임 설정
 	MyFrame() {
