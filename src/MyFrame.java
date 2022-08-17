@@ -16,87 +16,79 @@ import javax.swing.JPanel;
 
 public class MyFrame extends JFrame {
 	
-	// ê° ìš”ì†Œë“¤
+	// °¢ ¿ä¼Òµé
 	private JButton proscons = new JButton("Action");
 	private JLabel tag = new JLabel();
-	//private JLabel name = new JLabel();
 	private JLabel num = new JLabel();
-	//private JLabel ber = new JLabel();
-	public Color color = new Color(0, 0, 255); // íŒŒë‘
+	public Color color = new Color(0, 0, 255); // ÆÄ¶û
 	
-	// ë©”ì¸ í”„ë ˆì„ ì„¤ì •
+	// ¸ŞÀÎ ÇÁ·¹ÀÓ ¼³Á¤
 	MyFrame() {
-		setTitle("ìœµí”„2 ê¸°ë§ê³ ì‚¬");
+		setTitle("À¶ÇÁ2 ±â¸»°í»ç");
 		
 		Container cp = getContentPane();
 		cp.setLayout(new BorderLayout());
 		cp.add(new WestPanel(), BorderLayout.WEST);
 		cp.add(new MyPanel(), BorderLayout.CENTER);
 		
-		setLocationRelativeTo(null); // í™”ë©´ ê°€ìš´ë°ì„œ GUI ì°½ ëœ¨ë„ë¡ í•¨
+		setLocationRelativeTo(null); // È­¸é °¡¿îµ¥¼­ GUI Ã¢ ¶ßµµ·Ï ÇÔ
 		setSize(400, 400);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	// ë§ˆìš°ìŠ¤ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
+	// ¸¶¿ì½º ¾×¼Ç ¸®½º³Ê
 	class MyActionListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			// ì•¡ì…˜í•˜ëŠ” ë²„íŠ¼ì˜ ì†ŒìŠ¤ ê°€ì ¸ì™€ì„œ ìƒˆ ë²„íŠ¼ ê°ì²´ ìƒì„±
+			// ¾×¼ÇÇÏ´Â ¹öÆ°ÀÇ ¼Ò½º °¡Á®¿Í¼­ »õ ¹öÆ° °´Ã¼ »ı¼º
 			JButton b = (JButton)e.getSource();
 			
-			// ë²„íŠ¼ì˜ í…ìŠ¤íŠ¸ì— ë”°ë¼ì„œ, ëˆ„ë¥¼ ë•Œ ë°”ë€ŒëŠ” í…ìŠ¤íŠ¸ì™€ ìƒ‰ê¹” ìš”ì†Œ ì„¤ì •
-			if (b.getText().equals("ì°¬ì„±")) {
-				b.setText("ë°˜ëŒ€");
-				color = Color.RED; // ë°˜ëŒ€ì¼ ë•ŒëŠ” ë¹¨ê°„ìƒ‰
+			// ¹öÆ°ÀÇ ÅØ½ºÆ®¿¡ µû¶ó¼­, ´©¸¦ ¶§ ¹Ù²î´Â ÅØ½ºÆ®¿Í »ö±ò ¿ä¼Ò ¼³Á¤
+			if (b.getText().equals("Âù¼º")) {
+				b.setText("¹İ´ë");
+				color = Color.RED; // ¹İ´ëÀÏ ¶§´Â »¡°£»ö
 			}
 			else {
-				b.setText("ì°¬ì„±");
-				color = Color.BLUE; // ì°¬ì„±ì¼ ë•ŒëŠ” íŒŒë€ìƒ‰
+				b.setText("Âù¼º");
+				color = Color.BLUE; // Âù¼ºÀÏ ¶§´Â ÆÄ¶õ»ö
 			}
 		}
 	}
 	
-	// ì‚¬ì´ë“œ íŒ¨ë„ ì„¤ì •
+	// »çÀÌµå ÆĞ³Î ¼³Á¤
 	class WestPanel extends JPanel {
 		WestPanel() {
 			setBackground(Color.YELLOW);
 			setSize(100,400);
-			this.setLayout(new GridLayout(10, 1));
+			this.setLayout(new GridLayout(10, 1)); // Flow´Â ¾ÈµÇ´õ±º...
 			
-			// ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ ì¶”ê°€í•œ ë²„íŠ¼ì„ íŒ¨ë„ì— ì˜¬ë¦¬ê¸°
+			// ¾×¼Ç ¸®½º³Ê Ãß°¡ÇÑ ¹öÆ°À» ÆĞ³Î¿¡ ¿Ã¸®±â
 			add(proscons);
-			proscons.setText("ì°¬ì„±");
+			proscons.setText("Âù¼º");
 			proscons.addActionListener(new MyActionListener());
 			
-			// ë¼ë²¨ë“¤ íŒ¨ë„ì— ì˜¬ë¦¬ê¸°
+			// ¶óº§µé ÆĞ³Î¿¡ ¿Ã¸®±â
 			JLabel empty = new JLabel();
 			add(empty);
-			empty.setText(" "); // ì–´ë–»ê²Œ ê³µê°„ì„ ë„ìš¸ê¹Œ í•˜ë‹¤ ê·¸ëƒ¥ ë¹ˆ ë¼ë²¨ ë„£ìŒ
-			tag.setText("<html>ì´ë¦„:<br>í™ê¸¸ë™</html>");
-			num.setText("<html>í•™ë²ˆ:<br>11111111</html>");
+			empty.setText(" "); // ¾î¶»°Ô °ø°£À» ¶ç¿ï±î ÇÏ´Ù ±×³É ºó ¶óº§ ³ÖÀ½
+			tag.setText("<html>ÀÌ¸§:<br>È«±æµ¿</html>");
+			num.setText("<html>ÇĞ¹ø:<br>11111111</html>");
 			add(tag);
-			//tag.setText("ì´ë¦„:");
-			//add(name);
-			//name.setText("name");
 			add(num);
-			//num.setText("í•™ë²ˆ:");
-			//add(ber);
-			//ber.setText("studentnum");
 		}
 	}
 	
-	// ë©”ì¸ íŒ¨ë„
+	// ¸ŞÀÎ ÆĞ³Î
 	class MyPanel extends JPanel {
-		// ì¢Œí‘œ ì €ì¥í•  ë°°ì—´ ì„ ì–¸ ë° ê° ì¸ë±ìŠ¤ë¡œ ì‚¬ìš©í•  ì •ìˆ˜ ì„ ì–¸
+		// ÁÂÇ¥ ÀúÀåÇÒ ¹è¿­ ¼±¾ğ ¹× °¢ ÀÎµ¦½º·Î »ç¿ëÇÒ Á¤¼ö ¼±¾ğ
 		Point xy[][] = new Point[30][2];
 		int pros = 0;
 		int cons = 0;
 		
-		// ë©”ì¸ íŒ¨ë„ ì„¤ì • ë° ë§ˆìš°ìŠ¤ ì–´ëŒ‘í„° ì„¤ì •
+		// ¸ŞÀÎ ÆĞ³Î ¼³Á¤ ¹× ¸¶¿ì½º ¾î´ğÅÍ ¼³Á¤
 		MyPanel() {
 			setBackground(Color.lightGray);
 			
@@ -104,7 +96,7 @@ public class MyFrame extends JFrame {
 
 				@Override
 				public void mousePressed(MouseEvent e) {
-					// ë§ˆìš°ìŠ¤ ëˆŒë €ì„ ë•Œ ëˆ„ë¥¸ ìë¦¬ì˜ ì¢Œí‘œë¥¼ í˜„ì¬ ìƒ‰ê¹”(ì°¬/ë°˜)ì— ë”°ë¼ ë‹¤ë¥¸ í–‰ì— ì €ì¥
+					// ¸¶¿ì½º ´­·¶À» ¶§ ´©¸¥ ÀÚ¸®ÀÇ ÁÂÇ¥¸¦ ÇöÀç »ö±ò(Âù/¹İ)¿¡ µû¶ó ´Ù¸¥ Çà¿¡ ÀúÀå
 					super.mousePressed(e);
 					if(color.equals(Color.BLUE)) {
 						xy[pros++][0] = e.getPoint();
@@ -112,7 +104,7 @@ public class MyFrame extends JFrame {
 					else {
 						xy[cons++][1] = e.getPoint();
 					}
-					repaint(); // ë§¤ë²ˆ ë‹¤ì‹œ ê·¸ë¦¬ê¸°
+					repaint(); // ¸Å¹ø ´Ù½Ã ±×¸®±â
 				}
 				
 			});
@@ -120,7 +112,7 @@ public class MyFrame extends JFrame {
 		
 		@Override
 		protected void paintComponent(Graphics g) {
-			// ë‹¤ì‹œ ê·¸ë¦´ ë•Œë§ˆë‹¤ ì§€ë‚œ íˆ¬í‘œê°€ ë³´ì—¬ì•¼ í•˜ë¯€ë¡œ í¬ì¸íŠ¸ ë°°ì—´ ì‚¬ìš©í•´ì„œ ìƒ‰ì¹ ëœ ì› ê·¸ë¦¬ê¸°
+			// ´Ù½Ã ±×¸± ¶§¸¶´Ù Áö³­ ÅõÇ¥°¡ º¸¿©¾ß ÇÏ¹Ç·Î Æ÷ÀÎÆ® ¹è¿­ »ç¿ëÇØ¼­ »öÄ¥µÈ ¿ø ±×¸®±â
 			super.paintComponent(g);
 			g.setColor(Color.BLUE);
 			for(int i = 0; i < pros; i++) {
